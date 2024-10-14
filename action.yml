@@ -20,5 +20,5 @@ outputs:
   markdown_urls:
     description: 'The urls to the images in GitHub image markdown formats as a JSON.stringified array.'
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'

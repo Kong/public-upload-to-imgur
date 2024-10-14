@@ -3,23 +3,23 @@ on: push
 jobs:
   demo:
     name: Demo the repo's capability
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Upload a single file
-        uses: devicons/public-upload-to-imgur@develop
+        uses: devicons/public-upload-to-imgur@4e2ad8ec7db08624b9b3c20ddf2c3855e3ccef80
         id: step_1
         with:
           path: ./docs/example.PNG
           client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Upload a folder with multiple files
-        uses: devicons/public-upload-to-imgur@develop
+        uses: devicons/public-upload-to-imgur@4e2ad8ec7db08624b9b3c20ddf2c3855e3ccef80
         id: step_2
         with:
           path: ./docs/
           client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Upload a glob pattern
-        uses: devicons/public-upload-to-imgur@develop
+        uses: devicons/public-upload-to-imgur@4e2ad8ec7db08624b9b3c20ddf2c3855e3ccef80
         id: step_3
         with:
           path: ./*/*.png
